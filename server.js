@@ -16,8 +16,10 @@ app.get('/pokemon',(req,res)=>{
     });
 })
 
+//Show route
 app.get('/pokemon/:id',(req,res) => {
-    res.send(pokemon[req.params.id]);
+    //res.send(pokemon[req.params.id]);
+    res.render('Show',{pokemon:pokemon[req.params.id]})
 })
 
 
