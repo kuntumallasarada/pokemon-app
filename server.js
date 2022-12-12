@@ -1,5 +1,8 @@
 const  express  = require('express');
 const app =express();
+app.set('view engine','jsx');
+app.engine('jsx',require('express-react-views').createEngine());
+
 const pokemon = require('./models/pokemon.js');
 
 //Routes
@@ -8,7 +11,9 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/pokemon',(req,res)=>{
-    res.send(pokemon);
+    res.render('Index',{
+        pokemon:pokemon
+    });
 })
 
 
