@@ -7,7 +7,7 @@ class New extends React.Component{
                 <h1>New Pokemon Page</h1>
                 <form action ='/pokemon' method = 'post'>
                     Name:<input type = 'text' name ='name'/><br/>
-                    Image:<input type = 'text' src='img'/><br/><br/>
+                    Image:<input type = 'text' name='img' src='img'/><br/><br/>
                     <input type = 'submit' name="" value="Create A Pokemon"/>
                 </form>
             </div>

@@ -48,11 +48,7 @@ app.get('/pokemon/new',(req,res)=>{
 //Post request
 app.post('/pokemon',(req,res)=>{
     Pokemon.create(req.body,(error,createdPokemon)=>{
-    Pokemon.find({},(error,allPokemon)=>{
-        res.render('pokemon/Index',{
-            pokemon:allPokemon
-        })
-       }) 
+    res.redirect('/pokemon');
     })
 });
 //Show route
@@ -62,7 +58,7 @@ app.post('/pokemon',(req,res)=>{
 // })
 
 //Show route with DB connection
-app.get('pokemon/:id',(req,res)=>{
+app.get('/pokemon/:id',(req,res)=>{
      Pokemon.findById(req.params.id,(error,foundPokemon)=>{
        res.render('pokemon/Show',{
         pokemon:foundPokemon

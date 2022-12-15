@@ -22,13 +22,11 @@ const myStyle = {
         <h1 style={{textAlign: 'center'}}>See All The Pokemon!</h1>
         <ul>
             {pokemon.map((pokemon)=>{
-               console.log("inside map function")
                 return(
-                 
-                <li>The <a href = {`/pokemon/${pokemon.id}`}>{pokemon.name[0].toUpperCase()+pokemon.name.substring(1)}</a>  is   {pokemon.img}.
-                </li>
-                
-                )
+                 <li>
+                  The <a href = {`/pokemon/${pokemon.id}`}>{pokemon.name[0].toUpperCase()+pokemon.name.substring(1)}</a>     
+                  </li>
+               )
             })}
         </ul>
       </div>
